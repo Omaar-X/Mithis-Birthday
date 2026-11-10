@@ -2329,3 +2329,77 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; letter-spacing:
   50% { transform: translateX(5px); }
 }
 @media (prefers-reduced-motion: reduce) { .scrapbook__spread { animation: none; } }
+
+/* Birthday invitation */
+.js .loader {
+  color: #fff3ed;
+  background: radial-gradient(ellipse at 50% 4%, #5c2c49, transparent 64%), #1e111e;
+}
+.loader .loader__core,
+.loader.is-done .loader__core {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.loader.is-waiting .loader__core { padding-block: clamp(1.4rem, 6vh, 3rem); }
+.loader__seal { display: none; }
+.loader.is-waiting .loader__seal {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: clamp(2.8rem, 11vh, 4.5rem);
+  aspect-ratio: 1;
+  margin: 0 auto .95rem;
+  border: 1px solid #e4b895;
+  border-radius: 50%;
+  color: #fbd6b4;
+  font: italic 500 clamp(1.7rem, 5vh, 2.65rem)/1 "Cormorant Garamond", Georgia, serif;
+  box-shadow: 0 0 0 4px #e4b89520, 0 0 25px #ffc4a529;
+}
+.loader__seal i { position: absolute; right: -5px; top: 1px; font: normal .74rem/1 Inter, sans-serif; }
+.loader .countdown-eyebrow { color: #f4c9a9; letter-spacing: .24em; }
+.loader .loader__script, .loader .countdown-value { color: #fff3ed; background: none; -webkit-text-fill-color: currentColor; }
+.loader.is-waiting .loader__script { font-size: clamp(2rem, 7vw, 3.45rem); }
+.loader .countdown-intro, .loader .countdown-intro time, .loader .loader__text, .loader .countdown-skip { color: #f8e2e5; }
+.loader .countdown-index, .loader .countdown-unit, .loader .countdown-steps span { color: #e9b9c8; }
+.loader .countdown-steps .is-active { color: #ffdcac; }
+.loader .countdown-dial__track { stroke: #f9bfad35; }
+.loader .countdown-dial__progress, .loader[data-phase="2"] .countdown-dial__progress { stroke: #ffcb9e; }
+.loader .loader-start { background: linear-gradient(120deg, #ffe6c7, #f2adbc); color: #341826; border: 1px solid #ffe5d0; }
+.loader .loader-start:hover { background: #ffe5d0; }
+.loader :is(.loader-start, .countdown-skip):focus-visible { outline: 2px solid #ffdbb6; outline-offset: 4px; }
+@media (prefers-reduced-motion: no-preference) {
+  .loader__seal i { animation: loader-seal-glint 2.4s ease-in-out infinite alternate; }
+}
+@keyframes loader-seal-glint {
+  from { opacity: .45; transform: scale(.75); }
+  to { opacity: 1; transform: scale(1.25); }
+}
+.loader__decor { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.loader__decor-defs { position: absolute; }
+.loader__decor > :is(.loader__butterfly, .loader__balloon) {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  transform: translate(-50%, -50%) rotate(var(--tilt));
+  opacity: .8;
+}
+.loader__butterfly { color: #ed9fc4; filter: drop-shadow(0 0 9px #ee90bf50); }
+.loader__butterfly:nth-of-type(even) { color: #e9b9f8; }
+.loader__balloon { color: #ba7098; }
+.loader__balloon:nth-of-type(even) { color: #c89572; }
+@media (prefers-reduced-motion: no-preference) {
+  .loader__butterfly { animation: loader-butterfly-drift 4.5s var(--delay) ease-in-out infinite alternate; }
+  .loader__balloon { animation: loader-balloon-drift 6s var(--delay) ease-in-out infinite alternate; }
+}
+@keyframes loader-butterfly-drift {
+  to { transform: translate(-50%, calc(-50% - 18px)) rotate(calc(var(--tilt) + 15deg)) scaleX(.72); }
+}
+@keyframes loader-balloon-drift {
+  to { transform: translate(-50%, calc(-50% - 24px)) rotate(calc(var(--tilt) + 8deg)); }
+}
+@media (max-width: 600px) {
+  .loader__decor > :is(.loader__butterfly, .loader__balloon) { width: calc(var(--size) * .75); opacity: .58; }
+}

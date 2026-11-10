@@ -29,10 +29,37 @@
     <canvas class="loader-celebration" id="loader-celebration" aria-hidden="true"></canvas>
     <div class="loader__glow" aria-hidden="true"></div>
     <div class="countdown-orbit" aria-hidden="true"></div>
+    <div class="loader__decor" aria-hidden="true">
+      <svg class="loader__decor-defs" width="0" height="0" focusable="false">
+        <defs>
+          <symbol id="loader-butterfly" viewBox="0 0 48 40">
+            <path d="M24 22C14 4 2 1 3 13c0 7 5 11 12 12-7 0-9 8-2 10 5 2 9-4 11-9 2 5 6 11 11 9 7-2 5-10-2-10 7-1 12-5 12-12C46 1 34 4 24 22Z" fill="currentColor" fill-opacity=".72"/>
+            <path d="M24 20v10m0-10-4-5m4 5 4-5" stroke="#ffe4cb" stroke-width="1.2" stroke-linecap="round"/>
+          </symbol>
+          <symbol id="loader-balloon" viewBox="0 0 50 90">
+            <ellipse cx="25" cy="24" rx="20" ry="22" fill="currentColor"/>
+            <path d="M15 10c-4 3-6 7-6 12" fill="none" stroke="#fff2e1" stroke-opacity=".7" stroke-width="2" stroke-linecap="round"/>
+            <path d="m25 44-4 7h8Z" fill="currentColor"/>
+            <path d="M25 51c-8 12 9 17 0 36" fill="none" stroke="#f6c7a9" stroke-width="1.2"/>
+          </symbol>
+        </defs>
+      </svg>
+      <svg class="loader__butterfly" style="--x:9%;--y:19%;--size:46px;--tilt:-18deg;--delay:-0s" viewBox="0 0 48 40"><use href="#loader-butterfly"/></svg>
+      <svg class="loader__butterfly" style="--x:24%;--y:75%;--size:32px;--tilt:14deg;--delay:-1s" viewBox="0 0 48 40"><use href="#loader-butterfly"/></svg>
+      <svg class="loader__butterfly" style="--x:77%;--y:18%;--size:35px;--tilt:-12deg;--delay:-2s" viewBox="0 0 48 40"><use href="#loader-butterfly"/></svg>
+      <svg class="loader__butterfly" style="--x:92%;--y:67%;--size:48px;--tilt:18deg;--delay:-3s" viewBox="0 0 48 40"><use href="#loader-butterfly"/></svg>
+      <svg class="loader__butterfly" style="--x:15%;--y:48%;--size:24px;--tilt:20deg;--delay:-4s" viewBox="0 0 48 40"><use href="#loader-butterfly"/></svg>
+      <svg class="loader__butterfly" style="--x:84%;--y:42%;--size:25px;--tilt:-22deg;--delay:-5s" viewBox="0 0 48 40"><use href="#loader-butterfly"/></svg>
+      <svg class="loader__balloon" style="--x:10%;--y:71%;--size:59px;--tilt:-12deg;--delay:-0s" viewBox="0 0 50 90"><use href="#loader-balloon"/></svg>
+      <svg class="loader__balloon" style="--x:20%;--y:28%;--size:36px;--tilt:9deg;--delay:-1.4s" viewBox="0 0 50 90"><use href="#loader-balloon"/></svg>
+      <svg class="loader__balloon" style="--x:88%;--y:25%;--size:58px;--tilt:12deg;--delay:-2.8s" viewBox="0 0 50 90"><use href="#loader-balloon"/></svg>
+      <svg class="loader__balloon" style="--x:94%;--y:82%;--size:44px;--tilt:-8deg;--delay:-4.199999999999999s" viewBox="0 0 50 90"><use href="#loader-balloon"/></svg>
+    </div>
     <div class="loader__core">
-      <p class="countdown-eyebrow">MITHI, THIS ONE IS FOR YOU </p>
+      <div class="loader__seal" aria-hidden="true">M<i>✦</i></div>
+      <p class="countdown-eyebrow">A birthday invitation</p>
       <p class="loader__script" id="loader-title">Just a second...</p>
-      <p class="countdown-intro">The date is set: <time datetime="11-11">11 November</time>.</p>
+      <p class="countdown-intro">Made for Mayaa · <time datetime="11-11">11 November</time></p>
       <div class="countdown-display" aria-hidden="true">
         <svg class="countdown-dial" viewBox="0 0 280 280"><circle class="countdown-dial__track" cx="140" cy="140" r="130"/><circle class="countdown-dial__progress" cx="140" cy="140" r="130" pathLength="100"/></svg>
         <span class="countdown-index" id="loader-index">01 / 04</span>

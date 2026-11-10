@@ -291,8 +291,8 @@ function initLoader() {
       raf = requestAnimationFrame(tick);
     };
     loader.classList.add("is-waiting");
-    title.textContent = "A birthday surprise for you.";
-    label.textContent = "Tap below. There’s a tune to go with it.";
+    title.textContent = "Happy birthday, Mayaa.";
+    label.textContent = "A little something I made just for you.";
     clearTimeout(window.introRecovery);
     $("#loader-start", loader).addEventListener("click", begin, { once: true });
   });
